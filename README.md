@@ -1,11 +1,10 @@
 
 # FastAPI Project
 
-I create this project leaded by [Saanjev](https://www.youtube.com/channel/UC2sYgV-NV6S5_-pqLGChoNQ), teacher at [freeCodeCamp](https://freecodecamp.org/) in the
- Python API Development Course.
+I create this project as an challenge for [Coodesh](https://coodesh.com/)
 ## Acknowledgements
 
- - [Python API Development - Comprehensive Course for Beginners](https://www.freecodecamp.org/news/creating-apis-with-python-free-19-hour-course/)
+ - [Coodesh Slack Support](desafios-dev.slack.com)
  
 
 ## Features
@@ -17,13 +16,9 @@ I create this project leaded by [Saanjev](https://www.youtube.com/channel/UC2sYg
 - Postman for testing routes and documenting;
 - Pydantic for data models and typing;
 - SQLAlchemy for creating a native way to manipulate databases with Python;
-- JWT for routes that need be authenticated;
 - CORS for domains controls;
-- Docker;
-- Deploy using heroku;
-- CI/CD using GitHub Actions.
-
-
+- Docker for make easy to create and manage deploys;
+- 
 
 ## Environment Variables
 
@@ -39,12 +34,9 @@ To run this project, you will need to add the following environment variables to
 
 `DATABASE_USERNAME = String`
 
-`SECRET_KEY = String`
+`POSTGRES_DB = String`
 
-`ALGORITHM = String`
-
-`ACCESS_TOKEN_EXPIRE_MINUTES = Integer`
-
+`POSTGRES_PASSWORD = String`
 
 
 ## Installation Locally (Full Guide)
@@ -52,13 +44,13 @@ To run this project, you will need to add the following environment variables to
 Clone this project with:
 
 ```bash
-  git clone https://github.com/gabriel-henriq/fastapi-course.git
+  git clone https://github.com/gabriel-henriq/Flight-Api-Coodesh-Challenge-.git
 ```
 
 CD the folder project:
 
 ```bash
-  cd fastapi-course
+  cd Flight-Api-Coodesh-Challenge-
 ```
 
 Then install a python virtual environment with:
@@ -100,76 +92,8 @@ uvicorn app.main:app --reload
 ```
 ## API Reference
 
-You can use [this public postman](https://www.postman.com/spacecraft-geoscientist-97585229/workspace/my-workspace/collection/16203062-62a34f39-42ac-4eca-9d73-202de27915eb).
+You can use [this public postman](https://www.postman.com/spacecraft-geoscientist-97585229/workspace/my-workspace/collection/16203062-a4bf6c42-2118-4663-a1c0-241325f89243?action=share&creator=16203062).
 
-Don't forget to setup the enviroment in right top to **FastAPI: Course**
+Don't forget to setup the enviroment in right top to **Space Fly Api**
 
-#### Create User
-
-```http
-  POST /users/
-```
-Create a user
-| Parameter | Type     | Description  |
-| :-------- | :------- | :----------- |
-| `email`   | `string` | **Required**.|
-| `password`| `string` | **Required**.|
-
-#### Get User
-
-```http
-  GET /users/${id}
-```
-Get a specfic user fetching by **id**
-| Parameter | Type     | Description    |
-| :-------- | :------- | :------------- |
-| `id`      | `integer`| **Required**.  |
-
-```http
-  POST /posts/
-```
-Create a post for authenticated users
-
-| Parameter     | Type     | Description    |
-| :--------     | :------- | :------------- |
-| `title`       | `string` | **Required**   |
-| `content`     | `string` | **Required**   |
-| `published`   | `boolean`| **Optional**   |
-
-```http
-  PUT /posts/${id}
-```
-Updating posts for authenticated users that provides **title**, **content** 
-and **Optional published** using body with json format, example:
-
-```json 
-{
-  "title": "New Title",
-  "content": "New Content",
-  "published": False
-}
-```
-
-| Parameter | Type        |  Description   |
-| :-------- | :-------    | :------------- |
-| `id`      | `integer`   | **Required**   |
-
-
-```http
-  DELETE /posts/${id}
-```
-Delete a post for authenticated users that provides an **id** in url parameter
-
-| Parameter | Type      | Description   |
-| :-------  | :------   | :----------   |
-|  `id`     | `integer` |  **Required** |
-
-```http
-  GET /posts/
-```
-
-Get all posts from all users
-
-| Parameter | Type      | Description   |
-| :-------  | :------   | :----------   |
-|  `None`   | `None`    |  **None**     |
+After start the server, you can check the API Documentation at [Fast API Docs with Open API](http://127.0.0.1:8000/docs)`
